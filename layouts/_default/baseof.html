@@ -3,6 +3,9 @@
 
 <head>
     {{- partial "head.html" . }}
+    {{ if or (.HasShortcode "katex") (.Page.Store.Get "hasKatex") }}
+        {{ partial "katex.html" }}
+    {{ end }}
 </head>
 
 <body class="
